@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-API_KEY = "MY_SECRET_KEY_123"
+API_KEY = "deepika123"
 
 @app.before_request
 def check_api_key():
@@ -14,5 +14,6 @@ def check_api_key():
 def hello():
     return jsonify({"message": "Hello, World!", "source": "Flask on Vercel"})
 
+# Vercel requires a WSGI-compatible handler
 def handler(environ, start_response):
     return app.wsgi_app(environ, start_response)
